@@ -1,0 +1,350 @@
+/*
+Colors used
+cf https://www.w3schools.com/cssref/css_colors.asp
+background Color Ivory #FFFFF0
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70; Navy #000080 purple #800080
+Secondary Color (Orange): #e0b354; red #FF0000
+
+Once finish with the Task1.5 change Styling
+
+ */
+ :root {
+  --primary-color:#000080;
+  --text-color: #2b2b2b;
+  --background-color: #FFFFF0;
+  --link:#000080;
+  --activelink:#FF0000;
+  --visitedlink:purple #800080;
+
+  --font-weight-1: 250px;
+  --font-weight-2: 400px;
+  --font-weight-3: 700px;
+
+  --font-size-1: 16px;
+  --font-size-2: 18px;
+  --font-size-3: 20px;
+  --font-size-4: 22px;
+  --font-size-5: 24px;
+  --font-size-6: 30px;
+
+  --line-height-1: 1.6;
+  --line-height-2: 1,8;
+
+}
+
+ * {
+  box-sizing: border-box;
+}
+
+header{
+      font-family: 'Lato', sans-serif;
+      text-color: var(--text-color);
+      font-weight: var(--font-weight-3);
+      font-size: var(--font-size-3);
+      line-height:var( --line-height-1);
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list__item {
+  list-style-type: none;
+}
+.navigation-list li{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.navigation-list {
+      primary-color: var(--primary-color);
+}
+.navigation-list__item--active {
+       text-decoration: none;
+}
+        a {
+            color: var(--primary-color);
+}
+              a:visited {
+                color: var(--visitedlink);
+}
+              a:hover,a:focus {
+                text-decoration: none;
+}
+              a:active {
+                color: var(--activelink);
+}
+
+
+body{
+    background-color: var(--background-color);
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__portrait {
+  float: left;
+  font-weight: var(--font-weight-1);
+  height: 250px;
+  margin-right: 40px;
+  border-radius:50%
+}
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-1);
+    line-height: 1.6;
+  }
+
+          h1 {
+            font-size: var(--font-size-6);
+             font-weight: var(--font-weight-3);
+}
+
+          h2 {
+            font-size: var(--font-size-5);
+             font-weight: var(--font-weight-3);
+}
+
+          h3 {
+            font-size:  var(--font-size-2);
+             font-weight: var(--font-weight-3);
+}
+
+#my-name{
+  font-style: italic;
+  color: var(--activelink);
+}
+
+#title{
+  font-style: oblique;
+}
+#my-codes{
+    color: var(--primary-color);
+}
+#more-about{
+  font-style:italic;
+  font-size: var(--font-size-1);
+  line-height:var(--line-height-1);
+}
+#work{
+  text-align: center;
+}
+
+.about-me{
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.list-hobbies {
+  list-style-type: none;
+  text-align: center;
+}
+#skills {
+  display: block;
+  text-align: center;
+}
+
+/* About page styling =
+how to center all content nothing stuck on the right anymore
+how to reduce space between picture and textarea
+How to animate this stupid svg : rotate / shrinks then enlarge /translate from x,y */
+
+
+.my-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* fr does the trick / Responsivness */
+  grid-gap: 20px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.work-link {
+  background-color: lightgray;
+  width: auto;
+  min-height: auto;
+  margin: 0;
+}
+
+.work-link:last-child { /* Singles out last row by giving it different properties, always named last child */
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+button {
+  border: none;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.page-footer {
+    clear: both;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#social {
+  font-size:  var(--font-size-3);
+  font-weight: var(--font-weight-3);
+  color: var(--primary-color)
+}
+/* notes
+always write responsive classes at the very end of CSS to ensure Overwritting */
+
+@media all and (max-width: 500px) {
+  .my-projects {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  .work-link:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: var(--font-size-4);
+  }
+}
+/* notes
+Code right above for max width 500px then columns shrinks from 3 to 1 thanks fr remember */
+
+/* notes
+can I use h1 id instead of referring as h1 or is it the general h1 on every pages ???*/
+
+/* notes
+Code right below for min width 500px / max width 750px then columns shrinks from 3 to 2 to 1 thanks fr remember */
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .my-projects {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .work-link:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: var(--font-size-4);
+  }
+}
+
+/* @media query for 0 to full size screen */
+@media all and (max-width: 750px){
+  .my-projects {
+    grid-gap: 10px;
+  }
+  .work-link:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+}
+    h1 {
+      font-size: var(--font-size-4);
+    }
+}
+
+/* notes
+Only have one class named button2
+Other button comes with tag <button class="submit"id="submit message"> Send a message </button>
+lets see if by adding class submit both button takes same properties - IT wors !  */
+
+button,
+.button2,
+.submit{
+  border: none;
+  font-family: inherit;
+  background-color:#000080;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+/*transition opacity and duration always required */
+
+button:hover, button:focus,
+.button2:hover,.button2:focus,
+.submit:hover,.submit:focus{
+cursor: pointer;
+opacity: 0.8;
+}
+/*I want to have an animation of my own but this svg issue distracted me*/
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  animation: 10s color-change infinite alternate linear;
+}
+
+/*Ok but what if I want to make the sun slowly grow bigger?
+Can I have several Keyframes for one elements?*/
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+ /*THIS SVG is a nightmare, how to I dl an svg image /
+ How do I convert anything into a SVG so I can have access to the code ?
+ Can I add an illustration with a link without having the code on my about.html page?
