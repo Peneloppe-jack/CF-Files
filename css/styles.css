@@ -11,15 +11,15 @@ Once finish with the Task1.5 change Styling
  */
  :root {
   --primary-color:#000080;
-  --text-color: #2b2b2b;
+  --text-decoration-color:#2b2b2b;
   --background-color: #FFFFF0;
   --link:#000080;
   --activelink:#FF0000;
   --visitedlink:purple #800080;
 
-  --font-weight-1: 250px;
-  --font-weight-2: 400px;
-  --font-weight-3: 700px;
+  --font-weight-small: 250;
+  --font-weight-medium: 400;
+  --font-weight-large: 700;
 
   --font-size-1: 16px;
   --font-size-2: 18px;
@@ -39,8 +39,8 @@ Once finish with the Task1.5 change Styling
 
 header{
       font-family: 'Lato', sans-serif;
-      text-color: var(--text-color);
-      font-weight: var(--font-weight-3);
+      text-decoration-color: var(--text-decoration-color);
+      font-weight: var(--font-weight-large);
       font-size: var(--font-size-3);
       line-height:var( --line-height-1);
 }
@@ -69,13 +69,16 @@ header{
 }
 
 .navigation-list {
-      primary-color: var(--primary-color);
+      color: var(--primary-color);
+      background-color: var(--background-color)
 }
 .navigation-list__item--active {
        text-decoration: none;
+
 }
         a {
             color: var(--primary-color);
+            background-color: var(--background-color)
 }
               a:visited {
                 color: var(--visitedlink);
@@ -85,10 +88,12 @@ header{
 }
               a:active {
                 color: var(--activelink);
+                background-color: var(--background-color)
 }
 
 
 body{
+    text-decoration-color: var(--text-decoration-color);
     background-color: var(--background-color);
 }
 
@@ -99,7 +104,7 @@ body{
 
 .profile__portrait {
   float: left;
-  font-weight: var(--font-weight-1);
+  font-weight: var(--font-weight-small);
   height: 250px;
   margin-right: 40px;
   border-radius:50%
@@ -107,25 +112,25 @@ body{
 
   body {
     font-family: 'Lato', sans-serif;
-    color: var(--text-color);
-    font-weight: var(--font-weight-2);
+    text-decoration-color: var(--text-decoration-color);
+    font-weight: var(--font-weight-medium);
     font-size: var(--font-size-1);
     line-height: 1.6;
   }
 
           h1 {
             font-size: var(--font-size-6);
-             font-weight: var(--font-weight-3);
+             font-weight: var(--font-weight-large);
 }
 
           h2 {
             font-size: var(--font-size-5);
-             font-weight: var(--font-weight-3);
+             font-weight: var(--font-weight-large);
 }
 
           h3 {
             font-size:  var(--font-size-2);
-             font-weight: var(--font-weight-3);
+             font-weight: var(--font-weight-large);
 }
 
 #my-name{
@@ -170,9 +175,9 @@ How to animate this stupid svg : rotate / shrinks then enlarge /translate from x
 
 
 .my-projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;  /* fr does the trick / Responsivness */
-  grid-gap: 20px;
+  display: inline-flex;
+  columns: 1fr 1fr 1fr;  /* fr does the trick / Responsivness */
+  padding: 10px;
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
@@ -184,13 +189,15 @@ How to animate this stupid svg : rotate / shrinks then enlarge /translate from x
   min-height: auto;
   margin: 0;
 }
+/*grid-template-columns*/
 
-.work-link:last-child { /* Singles out last row by giving it different properties, always named last child */
+/*.work-link:last-child { /* Singles out last row by giving it different properties, always named last child
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-  }
+  }*/
+
 
 button {
   border: none;
@@ -217,9 +224,10 @@ button:hover, button:focus {
 
 #social {
   font-size:  var(--font-size-3);
-  font-weight: var(--font-weight-3);
+  font-weight: var(--font-weight-large);
   color: var(--primary-color)
 }
+
 /* notes
 always write responsive classes at the very end of CSS to ensure Overwritting */
 
@@ -232,6 +240,7 @@ always write responsive classes at the very end of CSS to ensure Overwritting */
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: var(--font-size-4);
   }
@@ -250,7 +259,7 @@ Code right below for min width 500px / max width 750px then columns shrinks from
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
   }
-  .work-link:last-child {
+ .work-link:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
