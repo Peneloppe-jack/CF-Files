@@ -171,30 +171,35 @@ How to animate this stupid svg : rotate / shrinks then enlarge /translate from x
 
 
 .my-projects {
-  display: flex;
-  columns: 1fr 1fr 1fr;  /* fr does the trick / Responsivness */
+
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* fr does the trick / Responsivness */
   padding: 10px;
   text-align: center;
-  max-width: 700px;
+  grid-gap: 20px;
   margin: 0 auto;
 }
-
+/*
 .work-link {
-  display: flex;
-  flex-direction: column;
+
   background-color: lightgray;
-  padding : 20px;
-  width: auto;
+  padding : 10px;
+  width:100% ;
   min-height: auto;
   margin: 0;
 }
+
+.work-link :last-child {
+  grid-column: 3 / 3;
+  grid-row: 1 / 3;
+}*/
 /*grid-template-columns*/
  /* last child /Singles out last row by giving it different properties, always named last child*/
 
-.work-link:last-child {
+/*.work-link:last-child {
     grid-column: 3/3;
     grid-row: 1/3;
-}
+}*/
 
 
 button {
@@ -230,12 +235,11 @@ button:hover, button:focus {
 
 
 /* notes
-always write responsive classes at the very end of CSS to ensure Overwritting
+always write responsive classes at the very end of CSS to ensure Overwritting*/
 
 
 @media all and (max-width: 500px) {
   .my-projects {
-    display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
@@ -255,7 +259,7 @@ Code right above for max width 500px then columns shrinks from 3 to 1 thanks fr 
 can I use h1 id instead of referring as h1 or is it the general h1 on every pages ???*/
 
 /* notes
-Code right below for min width 500px / max width 750px then columns shrinks from 3 to 2 to 1 thanks fr remember
+Code right below for min width 500px / max width 750px then columns shrinks from 3 to 2 to 1 thanks fr remember*/
 
 @media all and (min-width: 500px) and (max-width: 750px){
   .my-projects {
@@ -269,14 +273,14 @@ Code right below for min width 500px / max width 750px then columns shrinks from
   h1 {
     font-size: var(--font-size-4);
   }
-}*/
+}
 
 
 /* @media query for 0 to full size screen */
 @media all and (max-width: 750px){
   .my-projects {
-    grid-template-columns: 1fr;
-  }
+    grid-gap: 10px;
+}
   .work-link:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
@@ -360,4 +364,4 @@ Can I have several Keyframes for one elements?*/
 }
  /*THIS SVG is a nightmare, how to I dl an svg image /
  How do I convert anything into a SVG so I can have access to the code ?
- Can I add an illustration with a link without having the code on my about.html page?
+ Can I add an illustration with a link without having the code on my about.html page?*/
