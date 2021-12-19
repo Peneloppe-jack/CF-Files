@@ -167,6 +167,12 @@ how to center all content nothing stuck on the right anymore
 how to reduce space between picture and textarea
 How to animate this stupid svg : rotate / shrinks then enlarge /translate from x,y */
 
+  .information {
+    display: block;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
 .my-projects {
 
